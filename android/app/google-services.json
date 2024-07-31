@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1096317344633",
+    "firebase_url": "https://monitoring-plta-a0dd6-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "monitoring-plta-a0dd6",
+    "storage_bucket": "monitoring-plta-a0dd6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1096317344633:android:bafcd2697f8010e2e72da8",
+        "android_client_info": {
+          "package_name": "com.example.plta"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCanFhogl0Lb4vygrj_X8GZNGKrJslYYfI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
