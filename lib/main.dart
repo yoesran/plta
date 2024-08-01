@@ -22,19 +22,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'PLTA',
       debugShowCheckedModeBanner: false,
-      home: StreamBuilder<User?>(
-        stream: FirebaseAuth.instance.authStateChanges(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.active) {
-            User? user = snapshot.data;
-            if (user == null) {
-              return const LoginPage();
-            }
-            return const HomePage();
-          }
-          return const Scaffold(body: Center(child: CircularProgressIndicator()));
-        },
-      ),
+      home: FirebaseAuth.instance.currentUser == null ? const LoginPage() : const HomePage(),
     );
   }
 }

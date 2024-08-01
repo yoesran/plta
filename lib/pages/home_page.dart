@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:plta/pages/login_page.dart';
 import 'package:plta/widgets/gauge_widget.dart';
 import 'package:plta/widgets/scale_dialog.dart';
 
@@ -113,8 +114,31 @@ class _HomePageState extends State<HomePage> {
                         iconSize: 40,
                         icon: const Icon(Icons.logout),
                         color: Colors.white,
-                        onPressed: () {
-                          FirebaseAuth.instance.signOut();
+                        onPressed: () async {
+                          try {
+                            FirebaseAuth.instance.signOut();
+                            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const LoginPage()));
+                          } catch (e) {
+                            scaleDialog(
+                              context,
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: SingleChildScrollView(
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        e.toString(),
+                                        textAlign: TextAlign.center,
+                                        style: const TextStyle(
+                                          fontSize: 16,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            );
+                          }
                         },
                       ),
                       IconButton(

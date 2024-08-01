@@ -130,7 +130,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         const SizedBox(width: 6),
                         GestureDetector(
                           onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(builder: (context) => const LoginPage()));
+                            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const LoginPage()));
                           },
                           child: const Text(
                             "Log In",
